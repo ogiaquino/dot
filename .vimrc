@@ -93,16 +93,16 @@ inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 
 cmap w!! %!sudo tee > /dev/null %
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
-set guioptions-=b
+"set guioptions-=m
+"set guioptions-=T
+"set guioptions-=r
+"set guioptions-=R
+"set guioptions-=l
+"set guioptions-=L
+"set guioptions-=b
 
-colorscheme eveningt
-highlight ExtraWhitespace ctermbg=red guibg=red
+"colorscheme eveningt
+"highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 let g:NERDTreeDirArrows=0
 
@@ -113,3 +113,19 @@ let g:NERDTreeDirArrows=0
 "let g:NERDTreeMapPreview="<F4>"
 
 "nmap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
+syntax enable
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
+
+"hi Normal guibg=#32322f ctermbg=236
+"hi NonText guibg=#32322f ctermbg=236
+"hi ColorColumn guibg=#000000 ctermbg=0
+"let &colorcolumn=join(range(1,79),",")
+
+
+set cc=79
+"hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+hi ColorColumn ctermbg=red guibg=red
+set cursorline 
