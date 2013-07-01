@@ -105,3 +105,20 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+
+psql() {                                                                                                                                                                                       
+    YELLOW=$(printf "\e[1;33m" )                                               
+    LIGHT_CYAN=$(printf "\e[1;36m" )                                           
+    NOCOLOR=$(printf "\e[0m"    )                                              
+                                                                               
+    export LESS="-iMSx4 -FXR"                                                  
+                                                                               
+    PAGER="sed \"s/\([[:space:]]\+[0-9.\-]\+\)$/${LIGHT_CYAN}\1$NOCOLOR/;"     
+    PAGER+="s/\([[:space:]]\+[0-9.\-]\+[[:space:]]\)/${LIGHT_CYAN}\1$NOCOLOR/g;"
+    PAGER+="s/|/$YELLOW|$NOCOLOR/g;s/^\([-+]\+\)/$YELLOW\1$NOCOLOR/\" 2>/dev/null  | less"
+    export PAGER                                                               
+                                                                               
+    env psql "$@"                                                              
+    unset LESS PAGER                                                           
+}  
