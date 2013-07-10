@@ -114,18 +114,18 @@ let g:NERDTreeDirArrows=0
 
 "nmap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
 syntax enable
-"set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
 
 
-"hi Normal guibg=#32322f ctermbg=236
-"hi NonText guibg=#32322f ctermbg=236
-"hi ColorColumn guibg=#000000 ctermbg=0
-"let &colorcolumn=join(range(1,79),",")
+hi Normal guibg=#32322f ctermbg=236
+hi NonText guibg=#32322f ctermbg=236
+hi ColorColumn guibg=#000000 ctermbg=0
+let &colorcolumn=join(range(1,79),",")
 
 
 set cc=79
-"hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+""hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 hi ColorColumn ctermbg=red guibg=red
 set cursorline 
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
